@@ -5,22 +5,22 @@
 		<title>Formulário</title>
 	</head>
 	<body>
-		<!-- enctype permite a verificação de conteúdo do formulário -->
+		<!-- enctype permite a verificação de conteúdo do formulário. permite o servidor dados que não são texto (fotos e arquivos) -->
 		<form action="" method="POST" enctype="multipart/form-data">
 			<fieldset>
 				<legend>Campos de formulário HTML</legend>
 				<table>
 					<tr>
 						<th>Nome</th>
-						<td><input type="text" name="nome"/></td>
+						<td><input type="text" name="nome" value="Tadeu Grigolon" /></td>
 					</tr>
 					<tr>
 						<th>E-mail</th>
-						<td><input type="text" name="email"/></td>
+						<td><input type="text" name="email" value="degrigo@gmail.com" /></td>
 					</tr>
 					<tr>
 						<th>Telefone</th>
-						<td><input type="text" name="telefone"/></td>
+						<td><input type="text" name="telefone" value="(11) 95858-9959" /></td>
 					</tr>
 					<tr>
 						<th>Gênero</th>
@@ -29,7 +29,8 @@
 						<td>
 							<input id="feminino" type="radio" name="genero" value="feminino"/>
 							<label for="feminino">Feminino</label> <br />
-							<input id="masculino" type="radio" name="genero" value="masculino"/>
+							<!-- checked autoseleciona o input 	-->
+							<input id="masculino" type="radio" name="genero" value="masculino" checked />
 							<label for="masculino">Masculino</label> <br />
 							<input id="outro" type="radio" name="genero" value="outro"/>
 							<label for="outro">Outro</label> <br />
@@ -39,7 +40,7 @@
 						<th>Assuntos</th>
 						<!-- Checkbox são tags de mútipla-seleção por default -->
 						<td>
-							<input id="html" type="checkbox" name="assuntos" value="html"/>
+							<input id="html" type="checkbox" name="assuntos" value="html" checked />
 							<label for="html">HTML</label> <br />
 							<input id="css" type="checkbox" name="assuntos" value="css"/>
 							<label for="css">CSS</label> <br />
@@ -56,6 +57,26 @@
 						<!-- textarea aceita name, cols (largura), rows (número de linhas) e maxlenght (total de caracteres) -->
 						<td>
 							<textarea name="descricao" cols="40%" rows="3" maxlength="200"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<th>Estados</th>
+						<td>
+							<!-- select recebe name e options valores -->
+							<!-- optgroup divide por grupos o select adicionando títulos -->
+							<select name="estados">
+								<option value="">Selecione</option>
+								<optgroup label="Sudoeste">									
+									<option value="SP">SP</option>
+									<option value="RS">RS</option>
+									<option value="RJ">RJ</option>
+								</optgroup>
+								<optgroup label="Noroeste">									
+									<option value="MA">MA</option>
+									<option value="AC">AC</option>
+									<option value="AM">AM</option>
+								</optgroup>									
+							</select>
 						</td>
 					</tr>
 				</table>
