@@ -67,7 +67,7 @@
 							<select name="estados">
 								<option value="">Selecione</option>
 								<optgroup label="Sudoeste">									
-									<option value="SP">SP</option>
+									<option value="SP" selected>SP</option>
 									<option value="RS">RS</option>
 									<option value="RJ">RJ</option>
 								</optgroup>
@@ -77,6 +77,16 @@
 									<option value="AM">AM</option>
 								</optgroup>									
 							</select>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="reset" name="resetar" value="Limpar Campos" />
+							<input type="submit" name="enviar" value="Enviar Dados" />
+							<!-- button necessita de interação via js ou php para evento -->
+							<input type="button" name="qualquer" value="Qualquer" />
+							<!-- tipo img transforma o botão em imagem -->
+							<input type="image" src="img/chrome-logo.png" width="100px" alt="Botão Imagem"/>
 						</td>
 					</tr>
 				</table>
