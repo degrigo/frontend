@@ -85,11 +85,42 @@
 							<input type="submit" name="enviar" value="Enviar Dados" />
 							<!-- button necessita de interação via js ou php para evento -->
 							<input type="button" name="qualquer" value="Qualquer" />
-							<!-- tipo img transforma o botão em imagem -->
+							<!-- tipo img transforma o botão em imagem. recebe atributo src -->
 							<input type="image" src="img/chrome-logo.png" width="100px" alt="Botão Imagem"/>
 						</td>
 					</tr>
 				</table>
+			</fieldset>
+			<fieldset>
+				<legend>Campos HTML5</legend>
+				<table>
+					<tr>
+						<th>Color</th>
+						<td><input type="color" name="color" value="#ff0000" /></td>
+					</tr>
+					<tr>
+						<th>Date</th>
+						<td><input type="date" name="data" min="2000-01-01" /></td>
+					</tr>
+					<tr>
+						<th>Datetime-local</th>
+						<td><input type="datetime-local" name="date_local" /></td>
+					</tr>
+					<tr>
+						<th>E-mail</th>
+						<td><input type="email" name="email" placeholder="E-mail" autofocus required /></td>
+					</tr>
+					<tr>
+						<th>Number</th>
+						<td><input type="number" name="quantidade" min="1" max="10" /></td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="enviar" value="Enviar com validação" /></td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="enviar" value="Enviar sem validação" formnovalidate /></td>
+					</tr>
+				</table>				
 			</fieldset>
 		</form>
 	</body>
