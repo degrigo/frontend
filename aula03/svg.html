@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SVG</title>
+	</head>
+	<body>
+		<h1>Conhecendo SVG no HTML5</h1>
+		<section>
+			Selecione a cor: <input type="color" name="color" />
+		</section>
+		<section>
+			<h2>Retângulos</h2>
+			<!-- 
+				largura: 200
+				altura: 100
+				preenchimento: blue
+				tam contorno: 10
+				cor contorno: black
+			 -->
+			 <!-- rect é a tag que recebe propriedades para compor os pontos do vetor svg -->
+			 <!-- 
+			 	svg width: seta a largura da área aonde o elemento svg será exibido
+			 	svg height: seta a altura da área aonde o elemento svg será exibido
+			 	x: define o ponto inicial horizontal do vetor a partir do canto superior esquerdo
+			 	y: define o ponto inicial vertical do vetor a partir do canto superior esquerdo
+			 	fill: cor de preenchimento
+			 	stroke-width: largura da borda
+			 	stroke: recebe a cor da borda
+			 -->
+			 <svg width="220" height="120" style="border: 1px solid #000;">
+			 	<rect x="10" y="10" width="200" height="100" fill="blue" stroke-width="10" stroke="black" />
+			 </svg>
+		</section>
+	</body>
+</html>
