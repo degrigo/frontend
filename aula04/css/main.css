@@ -86,7 +86,7 @@ p {
 	background-repeat: no-repeat; /* repeat, repeat-x, repeat-y, no-repeat */
 	background-size: 50%; /* manipula o tamanho da imagem */
 	background-position: 50% 20%; /* posicionamento da imagem dentro da div (x,y) */
-	background-attachment: fixed; /* fixa o background dentro da div */
+	background-attachment: fixed; /* fixa o background dentro da div 	*/
 }
 
 div.primeira {
