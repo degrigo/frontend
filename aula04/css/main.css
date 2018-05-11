@@ -1,0 +1,49 @@
+/* web safe fonts */
+/* 
+	conceito de fonte: 
+	busca primeiro a Courier New
+	se não existir, busco a Courier
+	se ainda não existir, carrego monospace
+
+ */
+
+/* adicionando fonte em formato woff da pasta fonts */
+ @font-face {
+ 	font-family: Titan;
+ 	src: url('fonts/titanone-regular.woff');
+ }
+
+body {		
+	/*font-family: Titan;*/
+	font-family: "Courier New", Courier, monospace;
+	font-size: 12px; /* small, medium, large */
+	color: #777;
+}
+
+h1 {
+	font-size: 28px;
+	text-transform: uppercase; /* todas as letras maiúsculas */
+	font-weight: bold;
+	color: #1c858f;
+}
+
+p {
+	line-height: 16px; /* Altura da linha do parágrafo */
+}
+
+.primeira {
+	width: 100%; /* comprimento */
+	height: auto; /* altura. auto pega o tamanho que a div precisa */
+	min-width: 100px; /* tamanho mínimo do elemento */
+	min-height: 100px;
+	max-width: 1024px; /* limita o tamanho máximo da div. se diminuir a tela, ele acompanha o comprimento máximo até atingir o valor setado */
+	max-height: 300px;
+	border: 1px solid #000;
+	overflow: auto; /* adiciona scroll se o conteúdo dentro da div  for maior do que altura e largura */ 
+	padding: 20px 40px; /* sequencia: padding (dentro), border (outline), margin (externo) topo, direita, baixo, esquerda */
+	margin: 20px 40px 60px 40px; 
+}
+
+div.primeira {
+	background-color: #cecece;
+}
