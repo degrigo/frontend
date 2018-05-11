@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8">
+		<title>Audio e Video</title>
+	</head>
+	<body>
+		<h1>Audio no HTML5</h1>
+		<section>
+			<h2>Audio</h2>
+			<!-- controls exibe o controle para audio -->
+			<!-- autoplay executa a media automaticamente -->
+			<!-- type audio e a sua extensão -->
+			<!-- sempre colocar dois arquivos. o navegador interpreta como um if -->
+			<audio controls autoplay>
+				<source src="media/audio.mp3" type="audio/mpeg" />
+				<source src="media/audio.ogg" type="audio/ogg" />
+				Seu navegador não suporta o recurso de Audio HTML5
+			</audio>
+		</section>
+		<section>
+			<h2>Vídeo</h2>
+			<!-- loop executa o vídeo novamente quando acabar -->
+			<video width="320" height="240" autoplay loop>
+				<source src="media/video.ogg" type="video/ogg" />
+				<source src="media/audio.mp3" type="video/mp4" />
+				Seu navegador não suporta o recurso de Video HTML5
+			</video>
+		</section>
+	</body>
+</html>

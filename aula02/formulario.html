@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Formulário</title>
+	</head>
+	<body>
+		<!-- enctype permite a verificação de conteúdo do formulário. permite o servidor dados que não são texto (fotos e arquivos) -->
+		<form action="" method="POST" enctype="multipart/form-data">
+			<fieldset>
+				<legend>Campos de formulário HTML</legend>
+				<table>
+					<tr>
+						<th>Nome</th>
+						<td><input type="text" name="nome" value="Tadeu Grigolon" /></td>
+					</tr>
+					<tr>
+						<th>E-mail</th>
+						<td><input type="text" name="email" value="degrigo@gmail.com" /></td>
+					</tr>
+					<tr>
+						<th>Telefone</th>
+						<td><input type="text" name="telefone" value="(11) 95858-9959" /></td>
+					</tr>
+					<tr>
+						<th>Gênero</th>
+						<!-- name com o mesmo grupo por ser escolha única -->
+						<!-- setar label com atributo for para identificar qual campo será selecionado -->
+						<td>
+							<input id="feminino" type="radio" name="genero" value="feminino"/>
+							<label for="feminino">Feminino</label> <br />
+							<!-- checked autoseleciona o input 	-->
+							<input id="masculino" type="radio" name="genero" value="masculino" checked />
+							<label for="masculino">Masculino</label> <br />
+							<input id="outro" type="radio" name="genero" value="outro"/>
+							<label for="outro">Outro</label> <br />
+						</td>
+					</tr>
+					<tr>
+						<th>Assuntos</th>
+						<!-- Checkbox são tags de mútipla-seleção por default -->
+						<td>
+							<input id="html" type="checkbox" name="assuntos" value="html" checked />
+							<label for="html">HTML</label> <br />
+							<input id="css" type="checkbox" name="assuntos" value="css"/>
+							<label for="css">CSS</label> <br />
+							<input id="js" type="checkbox" name="assuntos" value="js"/>
+							<label for="js">JS</label> <br />
+						</td>
+					</tr>
+					<tr>
+						<th>Foto</th>
+						<td><input type="file" name="foto"/></td>
+					</tr>
+					<tr>
+						<th>Conte mais</th>
+						<!-- textarea aceita name, cols (largura), rows (número de linhas) e maxlenght (total de caracteres) -->
+						<td>
+							<textarea name="descricao" cols="40%" rows="3" maxlength="200"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<th>Estados</th>
+						<td>
+							<!-- select recebe name e options valores -->
+							<!-- optgroup divide por grupos o select adicionando títulos -->
+							<select name="estados">
+								<option value="">Selecione</option>
+								<optgroup label="Sudoeste">									
+									<option value="SP" selected>SP</option>
+									<option value="RS">RS</option>
+									<option value="RJ">RJ</option>
+								</optgroup>
+								<optgroup label="Noroeste">									
+									<option value="MA">MA</option>
+									<option value="AC">AC</option>
+									<option value="AM">AM</option>
+								</optgroup>									
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="reset" name="resetar" value="Limpar Campos" />
+							<input type="submit" name="enviar" value="Enviar Dados" />
+							<!-- button necessita de interação via js ou php para evento -->
+							<input type="button" name="qualquer" value="Qualquer" />
+							<!-- tipo img transforma o botão em imagem. recebe atributo src -->
+							<input type="image" src="img/chrome-logo.png" width="100px" alt="Botão Imagem"/>
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+			<fieldset>
+				<legend>Campos HTML5</legend>
+				<table>
+					<tr>
+						<th>Color</th>
+						<td><input type="color" name="color" value="#ff0000" /></td>
+					</tr>
+					<tr>
+						<th>Date</th>
+						<td><input type="date" name="data" min="2000-01-01" /></td>
+					</tr>
+					<tr>
+						<th>Datetime-local</th>
+						<td><input type="datetime-local" name="date_local" /></td>
+					</tr>
+					<tr>
+						<th>E-mail</th>
+						<!-- autofocus checa a validação no input -->
+						<td><input type="email" name="email" placeholder="E-mail" autofocus required /></td>
+					</tr>
+					<tr>
+						<th>Number</th>
+						<td><input type="number" name="quantidade" min="1" max="10" /></td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="enviar" value="Enviar com validação" /></td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="enviar" value="Enviar sem validação" formnovalidate /></td>
+					</tr>
+				</table>				
+			</fieldset>
+		</form>
+	</body>
+</html>

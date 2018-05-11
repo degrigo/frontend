@@ -1,0 +1,28 @@
+/* toda tag p que coter a classe destaque */
+/* pesquisar css aural */
+/* hierarquia com css só trabalha com compiladores less, compass e css3 */
+p.destaque {
+	color: red;
+}
+
+#cabecalho h1 {
+	font-size: 32px;
+}
+
+#conteudo ul li a {	
+	color: orange; 
+}
+
+#conteudo ul li a:hover { 
+	color: green; 
+}
+
+#conteudo p.destaque strong { 
+	color: gray; 
+}
+
+.mensagem.destaque {
+	font-size: 22px;
+	background-color: black;
+	color: white;
+}
