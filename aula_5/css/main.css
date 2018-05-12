@@ -58,6 +58,7 @@ h3 {
 }
 
 #sobre {
+	padding: 40px 0;
 	background-color: #cccccc;
 	clear: both;
 	background: url('../images/bg.jpg');
@@ -72,10 +73,12 @@ h3 {
 }
 
 #servicos {
+	padding: 40px 0;
 	background-color: #919191;
 }
 
 #contato {
+	padding: 40px 0;
 	background-color: #606060;
 }
 
@@ -121,6 +124,20 @@ h3 {
 	display: inline-block;
 }
 
+#menu ul li a {
+	text-decoration: none; /* remove underline */
+	color: #000;
+	text-transform: uppercase;
+	font-size: 1em;
+}
+
+/* seletores dinâmicos hover, */
+#menu ul li a:hover {
+	color: orange;
+	text-decoration: underline;
+}
+
+
 #servicos .servico {
 	/* setando o tamanho relativo dos 3 blocos de serviço */
 	width: 30%;
@@ -160,9 +177,36 @@ h3 {
 /* reaproveitando */
 #contato table input, #contato table textarea {
 	width: 100%;
-	box-sizing: border-box;
+	box-sizing: border-box;	
+	border: 1px solid #666;
 }
 
 #contato table label {
 	display: block;
+}
+
+#contato table input:focus,
+/* dinâmicos: focus aplica clase quando o input está selecionado */
+#contato table textarea:focus {
+	border-bottom: 3px solid orange;
+}
+
+#contato table input[type="text"],
+#contato table input[type="email"] {
+	padding: 8px 16px;
+	border-radius: 4px;
+}
+
+#contato table input[type="submit"] {
+	border-radius: 4px;
+	padding: 12px 0;
+	background-color: #440668;
+	color: #fff;
+	text-transform: uppercase;
+	border-bottom: 3px solid #360851; 
+}
+
+#contato table input[type="submit"]:hover {
+	background-color: #6e209b;
+	cursor: pointer;
 }
