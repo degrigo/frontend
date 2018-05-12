@@ -1,0 +1,88 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "Lucida Sans Unicode", sans-serif;
+	/* adotando padrão do navegador do usuário */
+	font-size: 1em;
+	color: #fff;
+	text-align: center;
+}
+
+/* float precisa ser aplicado no pai e nos filhos. quando se aplica float, o position muda de static para relative */
+
+div {
+	border: 1px solid #000;
+	width: 100%; /* centraliza o elemento perante ao centered */
+	padding: 10px;
+	/* box-sizing adapata o tamanho do padding ao da div */
+	box-sizing: border-box;
+}
+
+#cabecalho {
+	background-color: #ffffff;
+	float: left;
+}
+
+#sobre {
+	background-color: #cccccc;
+	clear: both;
+}
+
+#servicos {
+	background-color: #919191;
+}
+
+#contato {
+	background-color: #606060;
+}
+
+.centered {
+	/* centralizando as divs por causa do 100% herdado setado acima*/
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+/* */
+
+#logo {
+	float: left;
+	width: 30%;
+	text-align: left;
+	padding: 15px 0 15px 15px;
+}
+
+#menu {
+	float: right;
+	width: 60%;
+	text-align: right;
+	padding: 15px 15px 15px 0;
+}
+
+/* penetrando na hierarquia do menu */
+
+#menu ul {
+	/* retira marcação da lista ordenada */
+	list-style: none;
+}
+
+#menu ul li {
+	/* conserva o padding no click (inline-block )*/
+	display: inline-block;
+}
+
+#servicos .servico {
+	/* setando o tamanho relativo dos 3 blocos de serviço */
+	width: 30%;
+	display: inline-block;
+	text-align: left;
+	padding: 0;
+}
+
+#servicos .servico img {
+	/* setando que a imagem ocupe 100% do espaço da div pai no qual ela está */
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	/* remove espaçamento em relação a div abaixo */
+	display: block;
+}
