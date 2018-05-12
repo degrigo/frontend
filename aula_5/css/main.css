@@ -86,3 +86,24 @@ div {
 	/* remove espaçamento em relação a div abaixo */
 	display: block;
 }
+
+#contato table {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	text-align: left;
+	/* setando tamanho da tabela */
+	max-width: 600px;
+	/* alinhando o conteúdo ao centro */
+	margin:	0 auto;
+}
+
+/* reaproveitando */
+#contato table input, #contato table textarea {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#contato table label {
+	display: block;
+}
