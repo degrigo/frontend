@@ -1,3 +1,9 @@
+@font-face {
+	font-family: "Oswald";
+	src: url("../fonts/Oswald-Regular.woff") format("woff");
+	/* lembra de incluir formato otf para IE < 9 */
+}
+
 body {
 	padding: 0;
 	margin: 0;
@@ -6,16 +12,44 @@ body {
 	font-size: 1em;
 	color: #fff;
 	text-align: center;
+	/* definindo o tamanho mínimo do body para dispositivo mobile */
+	min-width: 320px;
 }
 
 /* float precisa ser aplicado no pai e nos filhos. quando se aplica float, o position muda de static para relative */
 
 div {
-	border: 1px solid #000;
 	width: 100%; /* centraliza o elemento perante ao centered */
 	padding: 10px;
 	/* box-sizing adapata o tamanho do padding ao da div */
 	box-sizing: border-box;
+}
+
+/* Títulos aopresentam padding por padrão */
+
+h1, h2, h3 {
+	font-family: "Oswald";
+	padding: 0;
+	margin: 0;
+	font-weight: 900: 
+}
+
+/* Trabalhando com excessões */
+
+h1 {
+	font-size: 3em;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 2em;
+	text-transform: uppercase;
+	padding-bottom: 2vw; /* viewport-width unidade de medida que leva em consideração a resolução da tela */
+}
+
+h3 {
+	font-size: 1.5em;
+	text-transform: uppercase;
 }
 
 #cabecalho {
@@ -26,6 +60,15 @@ div {
 #sobre {
 	background-color: #cccccc;
 	clear: both;
+	background: url('../images/bg.jpg');
+	/* fazendo com que a imagem não se repita independente da resolução */
+	background-repeat: no-repeat;
+	/* centralizando a imagem no tamanho da div (x,y) */
+	background-position: center center;
+	/* imagem alcançando limites da div que ela está. se adapta de acordo com o tamanho da tela */
+	background-size: cover;
+	/* posição fixa da imagem */
+	background-attachment: fixed;
 }
 
 #servicos {
@@ -49,6 +92,14 @@ div {
 	width: 30%;
 	text-align: left;
 	padding: 15px 0 15px 15px;
+}
+
+#logo img {
+	/* setando o tamanho da imagem do logo */
+	padding: 0;
+	margin: 0;
+	max-height: 40px;
+	min-width: 36px; 
 }
 
 #menu {
@@ -76,6 +127,9 @@ div {
 	display: inline-block;
 	text-align: left;
 	padding: 0;
+	/* definindo tamanho mínimo para a div manter o seu tamanho indepentende da resolução */
+	min-width: 300px;	
+	margin-bottom: 2vw;
 }
 
 #servicos .servico img {
@@ -86,6 +140,11 @@ div {
 	/* remove espaçamento em relação a div abaixo */
 	display: block;
 }
+
+#servicos .servico .descricao {
+	background-color: red;
+}
+
 
 #contato table {
 	width: 100%;
