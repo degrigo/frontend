@@ -1,0 +1,212 @@
+@font-face {
+	font-family: "Oswald";
+	src: url("../fonts/Oswald-Regular.woff") format("woff");
+	/* lembra de incluir formato otf para IE < 9 */
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "Lucida Sans Unicode", sans-serif;
+	/* adotando padrão do navegador do usuário */
+	font-size: 1em;
+	color: #fff;
+	text-align: center;
+	/* definindo o tamanho mínimo do body para dispositivo mobile */
+	min-width: 320px;
+}
+
+/* float precisa ser aplicado no pai e nos filhos. quando se aplica float, o position muda de static para relative */
+
+div {
+	width: 100%; /* centraliza o elemento perante ao centered */
+	padding: 10px;
+	/* box-sizing adapata o tamanho do padding ao da div */
+	box-sizing: border-box;
+}
+
+/* Títulos aopresentam padding por padrão */
+
+h1, h2, h3 {
+	font-family: "Oswald";
+	padding: 0;
+	margin: 0;
+	font-weight: 900: 
+}
+
+/* Trabalhando com excessões */
+
+h1 {
+	font-size: 3em;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 2em;
+	text-transform: uppercase;
+	padding-bottom: 2vw; /* viewport-width unidade de medida que leva em consideração a resolução da tela */
+}
+
+h3 {
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+
+#cabecalho {
+	background-color: #ffffff;
+	float: left;
+}
+
+#sobre {
+	padding: 40px 0;
+	background-color: #cccccc;
+	clear: both;
+	background: url('../images/bg.jpg');
+	/* fazendo com que a imagem não se repita independente da resolução */
+	background-repeat: no-repeat;
+	/* centralizando a imagem no tamanho da div (x,y) */
+	background-position: center center;
+	/* imagem alcançando limites da div que ela está. se adapta de acordo com o tamanho da tela */
+	background-size: cover;
+	/* posição fixa da imagem */
+	background-attachment: fixed;
+}
+
+#servicos {
+	padding: 40px 0;
+	background-color: #919191;
+}
+
+#contato {
+	padding: 40px 0;
+	background-color: #606060;
+}
+
+.centered {
+	/* centralizando as divs por causa do 100% herdado setado acima*/
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+/* */
+
+#logo {
+	float: left;
+	width: 30%;
+	text-align: left;
+	padding: 15px 0 15px 15px;
+}
+
+#logo img {
+	/* setando o tamanho da imagem do logo */
+	padding: 0;
+	margin: 0;
+	max-height: 40px;
+	min-width: 36px; 
+}
+
+#menu {
+	float: right;
+	width: 60%;
+	text-align: right;
+	padding: 15px 15px 15px 0;
+}
+
+/* penetrando na hierarquia do menu */
+
+#menu ul {
+	/* retira marcação da lista ordenada */
+	list-style: none;
+}
+
+#menu ul li {
+	/* conserva o padding no click (inline-block )*/
+	display: inline-block;
+}
+
+#menu ul li a {
+	text-decoration: none; /* remove underline */
+	color: #000;
+	text-transform: uppercase;
+	font-size: 1em;
+}
+
+/* seletores dinâmicos hover, */
+#menu ul li a:hover {
+	color: orange;
+	text-decoration: underline;
+}
+
+
+#servicos .servico {
+	/* setando o tamanho relativo dos 3 blocos de serviço */
+	width: 30%;
+	display: inline-block;
+	text-align: left;
+	padding: 0;
+	/* definindo tamanho mínimo para a div manter o seu tamanho indepentende da resolução */
+	min-width: 300px;	
+	margin-bottom: 2vw;
+}
+
+#servicos .servico img {
+	/* setando que a imagem ocupe 100% do espaço da div pai no qual ela está */
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	/* remove espaçamento em relação a div abaixo */
+	display: block;
+}
+
+#servicos .servico .descricao {
+	background-color: red;
+}
+
+
+#contato table {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	text-align: left;
+	/* setando tamanho da tabela */
+	max-width: 600px;
+	/* alinhando o conteúdo ao centro */
+	margin:	0 auto;
+}
+
+/* reaproveitando */
+#contato table input, #contato table textarea {
+	width: 100%;
+	box-sizing: border-box;	
+	border: 1px solid #666;
+}
+
+#contato table label {
+	display: block;
+}
+
+#contato table input:focus,
+/* dinâmicos: focus aplica clase quando o input está selecionado */
+#contato table textarea:focus {
+	border-bottom: 3px solid orange;
+}
+
+#contato table input[type="text"],
+#contato table input[type="email"] {
+	padding: 8px 16px;
+	border-radius: 4px;
+}
+
+#contato table input[type="submit"] {
+	border-radius: 4px;
+	padding: 12px 0;
+	background-color: #440668;
+	color: #fff;
+	text-transform: uppercase;
+	border-bottom: 3px solid #360851; 
+}
+
+#contato table input[type="submit"]:hover {
+	background-color: #6e209b;
+	cursor: pointer;
+}

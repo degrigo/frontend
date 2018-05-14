@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8">
+		<title>Conhecendo Canvas do HTML5</title>
+	</head>
+	<body>
+		<h1>Conhecendo Canvas do HTML5</h1>
+		<canvas id="meu_canvas" width="600" height="400" style="border: 1px solid">
+			
+		</canvas>
+		<script>
+			// var nome = "Tadeu Grigolon";
+			// Objeto do Javascript
+			var canvas = document.getElementById('meu_canvas');
+			var contexto = canvas.getContext('2d');
+
+			//contexto.fillStyle="#ff0000";
+			// fillRect x, y, width, height
+			//contexto.fillRect(10,10,50,150);
+
+			var img = document.createElement('img');
+			img.src = "images/test.png";
+			img.alt = "rocket";
+
+			var pat = contexto.createPattern(img, "repeat");
+			contexto.rect(0,0,canvas.width,canvas.height);
+			contexto.fillStyle = pat;
+			contexto.fill();
+
+			// create Element cria uma tag html
+			//var img = document.createElement('img');
+			//img.src = "images/rocket.png";
+			//img.alt = "rocket";
+
+			//document.body.appendChild(img);
+
+			// create Pattern recebe img + método repeat
+			//var pattern = contexto.createPattern(img, "repeat");
+			//contexto.rect(0,0,canvas.width,canvas.height);
+			//contexto.fillStyle = pattern;
+			//contexto.fill();
+
+		</script>
+	</body>
+</html>
