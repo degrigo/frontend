@@ -1,0 +1,37 @@
+#container {
+	width: 600px;
+	height: 600px;
+	background-color: green;
+	margin: 0 auto;
+	/* float deixa o padding para fora */
+	padding: 10px;
+}
+
+.img {
+	width: 10%;
+	float: left;
+	height: 100px;
+	background-color: orange;
+	color: #fff;
+	/* trabalhando com transição */
+	/* 
+	transition-property: width;
+	transition-duration: 2s;
+	transition-delay: 0; 
+	*/
+	/* seta todos os atributos de transição com all*/
+	transition: all 2s ease-out;
+}
+
+.img:hover {
+	width: 70%;
+	height: 100%;
+}
+
+.txt {
+	width: 30%;
+	float: right;
+	height: 100px;
+	background-color: red;
+	color: #fff;
+}

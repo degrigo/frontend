@@ -1,0 +1,71 @@
+#container {
+	width: 600px;
+	background-color: green;
+	margin: 0 auto;
+	/* float deixa o padding para fora */
+	padding: 10px;
+}
+
+.img {
+	width: 70%;
+	float: left;
+	height: 100px;
+	background-color: orange;
+	color: #fff;
+	/* setando nome da animação */
+	/* -webkit- é o prefixo para safari.*/
+	-webkit-animation-name: teste;
+	animation-name: teste;
+	/* duração para animação  necessita deste atributo*/
+	-webkit-animation-duration: 3s;
+	animation-duration: 3s;
+	/* definindo número de reepetições. aceita números inteiros ou infinito */
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	/* tempo de espera para executar a animação */
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+
+.txt {
+	width: 30%;
+	float: right;
+	height: 100px;
+	background-color: red;
+	color: #fff;
+	-webkit-animation-name: teste2;
+	animation-name: teste2;
+	-webkit-animation-duration: 3s;
+	animation-duration: 3s;
+}
+
+/* keyframes recebe as proproedades a serem alteradas para a animação */
+/* aceita cor, tamanho, posição, display, height, etc */
+@keyframes teste {
+	from {
+		background-color: red;
+	}
+
+	to {
+		background-color: yellow;
+	}
+}
+
+@keyframes teste2 {
+	/* aceita porcentagens para controlar melhor a animação */
+	0% {
+		
+	}
+
+	30% {
+		width: 40%;
+	}
+
+	60% {
+		width: 50%;
+	}
+
+	100% {
+		width: 90%;
+	}
+}

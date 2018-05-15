@@ -48,6 +48,7 @@
 	background-image: url('../images/fundo2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
+	/* criando excessão para div3 estar alinhado à direita */
 	float: right;
 }
 
