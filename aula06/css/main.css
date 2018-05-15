@@ -37,22 +37,15 @@ section {
     padding: 30px 0;
 }
 
-/* trabalhando com before */
-span:first-child::before, 
-span:last-child::before {
+/* trabalhando com before, after */
+span::before, span::after {
 	content: '\2022'; /* pode receber imagem */
 	color: #fff;
 	font-size: 22px;
     margin: 0 10px;
-}
-
-/* trabalhando com after */
-span:first-child::after,
-span:last-child::after {
-	content: '\2022'; /* pode receber imagem */
-	color: #fff;
-	font-size: 22px;
-    margin: 0 10px;
+    /* alinhando elemento inline no meio */
+    vertical-align: middle;
+    display: inline-block;
 }
 
 #sale, #brooks {
