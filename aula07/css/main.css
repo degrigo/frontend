@@ -1,0 +1,66 @@
+/* setando o container com o máximo de 600px*/
+/* margin 0 auto centraliza no centro */
+
+#container {
+	background-color: green;
+	max-width: 600px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.img-container {
+	width: 64%;
+	margin: 0.5%;
+	height: 180px;
+	box-sizing: border-box;
+	background-color: orange;
+	float: left;
+}
+
+.txt-container {
+	width: 34%;
+	margin: 0.5%;
+	height: 180px;
+	box-sizing: border-box;
+	background-color: blue;
+	color: #fff;
+	float: right;
+	font-size: 30px;
+	text-align: center;
+	/* centralizando o texto nomeio da div :) */
+	vertical-align: middle;
+	/* lineheight do tamanho da dic centraliza o texto no meio */
+	line-height: 180px
+}
+
+#container div:nth-child(1) {
+	background-image: url('../images/fundo1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#container div:nth-child(2) {
+	background-color: purple;
+}
+
+#container div:nth-child(3) {
+	background-image: url('../images/fundo2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	float: right;
+}
+
+#container div:nth-child(4) {
+	background-color: red;
+}
+
+#container div:nth-child(5) {
+	background-image: url('../images/fundo3.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#container div:nth-child(6) {
+	background-color: grey;
+}
