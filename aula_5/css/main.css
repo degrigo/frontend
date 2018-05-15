@@ -105,37 +105,52 @@ h3 {
 	min-width: 36px; 
 }
 
-#menu {
-	float: right;
-	width: 60%;
-	text-align: right;
-	padding: 15px 15px 15px 0;
-}
-
 /* penetrando na hierarquia do menu */
 
-#menu ul {
-	/* retira marcação da lista ordenada */
-	list-style: none;
+
+#menu ul { 
+	display: none; 
 }
 
-#menu ul li {
-	/* conserva o padding no click (inline-block )*/
+#menu .icon	{
 	display: inline-block;
+	cursor: pointer;
+	max-height: 38px;
+	max-width: 38px;
 }
 
-#menu ul li a {
-	text-decoration: none; /* remove underline */
-	color: #000;
-	text-transform: uppercase;
-	font-size: 1em;
+@media only screen and (min-width: 768px) {
+
+	#menu .icon{
+		display: none;
+	}
+
+	#menu ul {
+		/* retira marcação da lista ordenada */
+		display: inline-block;
+		list-style: none;
+	}	
+
+	#menu ul li {
+		/* conserva o padding no click (inline-block )*/
+		display: inline-block;
+	}
+
+	#menu ul li a {
+		text-decoration: none; /* remove underline */
+		color: #000;
+		text-transform: uppercase;
+		font-size: 1em;
+	}
+
+	/* seletores dinâmicos hover, */
+	#menu ul li a:hover {
+		color: orange;
+		text-decoration: underline;
+	}
+
 }
 
-/* seletores dinâmicos hover, */
-#menu ul li a:hover {
-	color: orange;
-	text-decoration: underline;
-}
 
 
 #servicos .servico {
