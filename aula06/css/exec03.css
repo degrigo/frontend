@@ -1,0 +1,76 @@
+body {
+	background-color: #fff;
+	padding: 0;
+	margin: 0;
+	color: #fff;
+	text-align: center;
+	font-family: 'Heebo', sans-serif;
+	text-transform: uppercase;	
+}
+
+div {
+	width: 100%;
+	padding: 10px;
+	height: 300px;
+	margin-bottom: 8px;
+	font-size: 40px;
+}
+
+section	{
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.clear {
+	display: none;
+	clear: both;
+	margin-bottom: 10px;
+}
+
+.impar .first-image {
+	float: left;
+	width: 60%;
+	background-image: url('../images/fundo-1.jpg');
+}
+.par .second-image {
+	float: right;
+	margin-right: 20px;
+	width: 35%;
+	background-image: url('../images/fundo-2.jpg');
+}
+
+.impar .third-image {
+	float: left;
+	width: 60%;
+	background-image: url('../images/fundo-3.jpg');
+}
+
+.impar .first-text {
+	font-size: 50px;
+	float: right;
+	width: 35%;	
+	margin-right: 20px;
+	background-color: #2196f3;
+	color: #fff;
+}
+
+.par .second-text {
+	font-size: 50px;
+	float: left;
+	width: 60%;
+	background-color: #009688;
+	color: #fff;
+}
+
+.impar .third-text {
+	font-size: 50px;
+	float: right;
+	width: 35%;
+	margin-right: 20px;
+	background-color: #ff5722;
+	color: #2196f3;
+}
+
+.par {
+
+}
