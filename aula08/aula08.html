@@ -67,11 +67,30 @@
 
 			//while percorre uma condição for verdadeira
 
-			var i = [0];
+			var i = 0;
 
 			// enquanto a condição for verdadeira, irá permanecer no loop
-			while ( i < 10 ) {
+			while ( i <= 10 ) {
 				console.log(i++);
+			}
+
+			var i = 10;
+
+			// do == faça :: while == enquanto
+			do {
+				console.log(i--);
+			} while (i > 0);
+
+			// estrutura for
+			for(var i = 0; i <= idade; i++) {
+				console.log(i);
+			}
+
+			//estrutura for/in
+			// busca o índice e valor do objeto tadeu
+			// percorre os atributos de um objeto
+			for(indice in tadeu){
+				console.log(indice + ": " + tadeu[indice]);
 			}
 
 		</script>
