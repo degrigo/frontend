@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Conhecendo o Javascript</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div></div>
+		<script type="text/javascript">
+
+			var nome = "Tadeu Grigolon";
+			var idade = 34;
+			var altura = 1.8;
+
+			var tadeu = {
+				name : "Tadeu Grigolon",
+				age : 34,
+				human : true
+			};
+
+			console.log(typeof nome + ' - ' + typeof idade  + ' - ' +  tadeu);
+
+			if(nome == "Tadeu") {
+				// fazer algo
+			} else if (nome == "Grigolon") {
+				//fazer algo
+			} else if(nome != "Tadeu Grigolon") {
+				// fazer algo
+				console.log(nome);
+			} else	{
+				// fazer algo
+				console.log("Nome não existe.");
+			}
+
+
+			// operador ternário 
+			// pergunta ? se verdadeiro : se falso
+			var teste = nome == "Tadeu Grigolon" ? "verdadeiro" : "falso";
+
+			console.log(teste);
+
+		</script>
+	</body>
+</html>
