@@ -153,7 +153,13 @@
 				var form = document.forms["contato"];
 				// trazendo todos os elementos presentes dentro do form com o método elements
 				var fields = form.elements; // objeto DOM elements
-
+				// criando objeto orientacao, com valores associativos dentro dele
+				var orientacao = {
+					'nome' : "Informe um nome válido",
+					'email' : "Informe um email válido",
+					'mensagem' :  "Informe uma mensagem válida"
+				};
+				// array vazio
 				var required = [];
 
 				// fields.lenght verifica quantas tags existe dentro do form
@@ -162,6 +168,16 @@
 						// campo vazio e deve ser preenchido
 						// enviando a lista com valores para dentro do array
 						required.push(fields[i]);
+					} else if (fields[i].type != "submit" && fields[i].value != ""){
+						// o campo foi preenchido.
+						//devemos limpar a orientação, removendo a classe required caso exista
+						// e adicionar a classe valid 
+
+						// removendo classe required e adicionando valid
+						fields[i].classList.remove("required");
+						fields[i].classList.add("valid");
+						var span = fields[i].parentNode.getElementsByTagName("span")[0];
+						span.innerHTML = "";
 					}
 				}
 
@@ -180,8 +196,11 @@
 						var span = required[i].parentNode.getElementsByTagName("span")[0];
 						// appendChild faz com que o JS entenda que elemento filho será adicionado dentro do span
 						//createTextNode adiciona valor da string dentro do elemento span
-						span.appendChild(document.createTextNode("valor"));
-
+						// pegando as mensagens de validação através do name do input
+						// span.appendChild(document.createTextNode(orientacao[required[i].name]));
+						
+						// pouco importa o conteúdo, o que importa é o name dos inputs
+						span.innerHTML = orientacao[required[i].name];
 					}
 
 					return false;
