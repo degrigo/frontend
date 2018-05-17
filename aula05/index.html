@@ -108,6 +108,7 @@
 			var posYCabecalho = cabecalho.offsetTop;
 
 			// setando classe na rolagem da página
+			// setando o evento onscroll (usuário) como função, declarando stickybar
 			window.onscroll = function(){
 				stickyBar();
 			};
@@ -129,15 +130,17 @@
 			//pegando id da imagem
 			var menuIcon = document.getElementById("menu_icon");
 			// escutando o evento com addEventListener
-			menu_icon.addEventListener('click', function(argument) {
+			menu_icon.addEventListener('click', function() {
+
+				var menu_lista = document.getElementById("menu_lista");
 				//perguntar se o menu lista já está visível
 				//esse cara já tem a classe showup setada
-				if(document.getElementById("menu_lista").classList.contains("showup")){
+				if(menu_lista.classList.contains("showup")){
 					//removendo a classe showup
-					document.getElementById("menu_lista").classList.remove("showup");
+					menu_lista.classList.remove("showup");
 				} else {
 					// se a classe foi removida, adiciono ela novamente
-					document.getElementById("menu_lista").classList.add("showup");
+					menu_lista.classList.add("showup");
 				}
 			});
 
