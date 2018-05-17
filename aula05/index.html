@@ -65,7 +65,9 @@
 		<div id="contato">
 			<div class="centered">
 				<h2>Contato</h2>
-				<form action="#" method="POST">
+				<!-- adicionando atrubuto onsubmit-->
+				<!-- setando name contato -->
+				<form action="#" name="contato" method="POST" onsubmit="return validar();">
 					<table>
 						<tr>
 							<td>
@@ -138,6 +140,42 @@
 					document.getElementById("menu_lista").classList.add("showup");
 				}
 			});
+
+			function validar(){
+				//localizar form no código
+				var form = document.forms["contato"];
+				// trazendo todos os elementos presentes dentro do form com o método elements
+				var fields = form.elements; // objeto DOM elements
+
+				var required = [];
+
+				// fields.lenght verifica quantas tags existe dentro do form
+				for(var i = 0; i < fields.length; i++) {
+					if(fields[i].type != "submit" && fields[i].value == "") {
+						// campo vazio e deve ser preenchido
+						// enviando a lista com valores para dentro do array
+						required.push(fields[i]);
+					}
+				}
+
+				console.log(required);
+				//return false;
+
+				// algum item foi jogado dentro do array
+				if(required.length > 0){
+					//percorrendo lista de elementos com valor vazio
+					for(var i = 0; i < required.length; i++){
+						//adicionar nova classe css se o elemento for vazio
+						required[i].classList.add("required");
+					}
+
+					return false;
+
+				} else {
+
+					return true;
+				}
+			}
 		</script>
 	</body>
 </html>
