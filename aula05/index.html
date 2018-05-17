@@ -4,6 +4,8 @@
 		<title>Tadeu Grigolon</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- DOM é a arvore de objetos do HTML, respeitando a hierarquia (documento == node, html == node)-->
 	</head>
 	<body>
 		<div id="cabecalho">
@@ -13,12 +15,12 @@
 					<img src="images/logo.png" alt="Logo" />
 				</div>
 				<div id="menu">
+					<img class="icon" src="images/icon_menu.png" alt="" />
 					<ul>
 						<li><a href="#">Sobre</a></li>
 						<li><a href="#">Serviços</a></li>
 						<li><a href="#">Contato</a></li>
-					</ul>
-					<img class="icon" src="images/icon_menu.png" alt="" />
+					</ul>					
 				</div>
 			</div>
 		</div>
@@ -94,5 +96,33 @@
 				</form>
 			</div>
 		</div>
+		<script type="text/javascript">
+			
+			//referenciando o elemento com Id cabeçalho
+			var cabecalho = document.getElementById("cabecalho");
+
+			// pegar a posição inicial do cabeçalho com offsetTop
+
+			var posYCabecalho = cabecalho.offsetTop;
+
+			// setando classe na rolagem da página
+			window.onscroll = function(){
+				stickyBar();
+			};
+
+			// window.pageYOffset informa quantos pixels a janela foir rolada no eixo Y
+			function stickyBar() {
+				if(window.pageYOffset > posYCabecalho) {
+
+					//incluir nova classe "sticky" nas classes do elemento cabecalho
+					cabecalho.classList.add("sticky");
+
+				} else {
+					//remover classe "sticky" nas classes do elemento cabecalho
+					cabecalho.classList.remove("sticky");
+				}
+			}
+
+		</script>
 	</body>
 </html>

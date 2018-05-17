@@ -55,6 +55,8 @@ h3 {
 #cabecalho {
 	background-color: #ffffff;
 	float: left;
+	transition: all 0.2s linear; /* usar linear quando quiser setar ease in e out */
+	box-shadow: 0 2px 4px #333; /* eixo x, eixo y, glow, cor*/
 }
 
 #sobre {
@@ -86,15 +88,46 @@ h3 {
 	/* centralizando as divs por causa do 100% herdado setado acima*/
 	max-width: 1024px;
 	margin: 0 auto;
+	transition: all 0.2s linear; /* usar linear quando quiser setar ease in e out */
 }
 
-/* */
+/* setando posição fixed para sticky */
+
+#cabecalho.sticky {
+	position: fixed;
+	top: 0;
+	z-index: 999; /* garantir sempre que esteja acima */
+	/* setando transition para a animação não ser abrupta */
+}
+
+#cabecalho.sticky #logo {
+	padding: 5px 0 0 0;
+	transition: all 0.2s linear;
+
+}
+
+#cabecalho.sticky #logo img {
+	max-height: 36px;
+	transition: all 0.2s linear;
+}
+
+#cabecalho.sticky #menu {
+	padding: 5px 0 0 0;
+	transition: all 0.2s linear;
+}
+
+#cabecalho.sticky .centered {
+	padding-top: 0;
+	transition: all 0.2s linear;
+
+}
 
 #logo {
 	float: left;
 	width: 30%;
 	text-align: left;
 	padding: 15px 0 15px 15px;
+	transition: all 0.2s linear; /* usar linear quando quiser setar ease in e out */
 }
 
 #logo img {
@@ -103,10 +136,20 @@ h3 {
 	margin: 0;
 	max-height: 40px;
 	min-width: 36px; 
+	/* adicionando transition nos elementos garantindo que eles já tenham a propriedade antes da classe sticky ser aplicada */
+	transition: all 0.2s linear; /* usar linear quando quiser setar ease in e out */
 }
 
 /* penetrando na hierarquia do menu */
 
+
+#menu {
+	float: right;
+	width: 60%;
+	text-align: right;
+	padding: 15px 15px 15px 0px;
+	transition: all 0.2s linear;
+}
 
 #menu ul { 
 	display: none; 
