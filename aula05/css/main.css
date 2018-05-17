@@ -151,10 +151,28 @@ h3 {
 	text-align: right;
 	padding: 15px 15px 15px 0px;
 	transition: all 0.2s linear;
+	/*  */
+	position: relative;
 }
 
 #menu ul { 
 	display: none; 
+	/* absoluto após o elemento relative acabar*/
+	position: absolute;
+	list-style-type: none;	
+}
+
+/* classe do id representado pelo elemento do menu hamburguer */
+#menu_lista.showup {
+	display: block;
+	background-color: #fff;
+	right: -40px;
+	margin: 0;
+	padding: 16px 0;
+}
+
+#menu_lista.showup li {
+	padding: 16px 56px;
 }
 
 #menu .icon	{
@@ -166,6 +184,14 @@ h3 {
 
 @media only screen and (min-width: 768px) {
 
+	#menu_list.showup {
+		background-color: transparent;
+		right: 0;
+		margin-bottom: 0;
+		padding: 0;
+		display: inline-block;
+	}
+
 	#menu .icon{
 		display: none;
 	}
@@ -174,6 +200,7 @@ h3 {
 		/* retira marcação da lista ordenada */
 		display: inline-block;
 		list-style: none;
+		position: static;
 	}	
 
 	#menu ul li {
