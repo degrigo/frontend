@@ -301,3 +301,10 @@ h3 {
 .required {
 	box-shadow: 0px 0px 10px #ff0000;
 }
+
+.error {
+	display: block;
+	font-size: 12px;
+	color: #ff0000;
+	padding: 8px 0;
+} 

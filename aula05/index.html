@@ -74,12 +74,15 @@
 								<!-- label trabalha com o id do input -->
 								<label for="nome">Nome:</label>
 								<input id="nome" type="text" name="nome" />
+								<!-- adicionando texto de validação -->
+								<span class="error"></span>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<label for="email">E-mail:</label>
 								<input id="email" type="email" name="email">
+								<span class="error"></span>
 							</td>
 						</tr>
 						<tr>
@@ -87,6 +90,7 @@
 								<!-- textarea com maxlenght, rows (linhas) e cols (colunas)  -->
 								<label for="mensagem">Mensagem:</label>
 								<textarea id="mensagem" name="mensagem"></textarea>
+								<span class="error"></span>
 							</td>
 						</tr>
 						<tr>
@@ -170,6 +174,14 @@
 					for(var i = 0; i < required.length; i++){
 						//adicionar nova classe css se o elemento for vazio
 						required[i].classList.add("required");
+						//acessando span
+						//parentNode acessa o nó pai aon o elemento está inserido
+						//getElementsByTagName seleciona o elemento DOM span, com o índice zero(primeiro da lista).
+						var span = required[i].parentNode.getElementsByTagName("span")[0];
+						// appendChild faz com que o JS entenda que elemento filho será adicionado dentro do span
+						//createTextNode adiciona valor da string dentro do elemento span
+						span.appendChild(document.createTextNode("valor"));
+
 					}
 
 					return false;
