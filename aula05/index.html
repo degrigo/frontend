@@ -15,8 +15,8 @@
 					<img src="images/logo.png" alt="Logo" />
 				</div>
 				<div id="menu">
-					<img class="icon" src="images/icon_menu.png" alt="" />
-					<ul>
+					<img class="icon" id="menu_icon" src="images/icon_menu.png" alt="" />
+					<ul id="menu_lista">
 						<li><a href="#">Sobre</a></li>
 						<li><a href="#">Serviços</a></li>
 						<li><a href="#">Contato</a></li>
@@ -123,6 +123,21 @@
 				}
 			}
 
+			//exibir menu de lista ao clicar no icon menu
+			//pegando id da imagem
+			var menuIcon = document.getElementById("menu_icon");
+			// escutando o evento com addEventListener
+			menu_icon.addEventListener('click', function(argument) {
+				//perguntar se o menu lista já está visível
+				//esse cara já tem a classe showup setada
+				if(document.getElementById("menu_lista").classList.contains("showup")){
+					//removendo a classe showup
+					document.getElementById("menu_lista").classList.remove("showup");
+				} else {
+					// se a classe foi removida, adiciono ela novamente
+					document.getElementById("menu_lista").classList.add("showup");
+				}
+			});
 		</script>
 	</body>
 </html>

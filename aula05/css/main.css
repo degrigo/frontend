@@ -130,13 +130,15 @@ h3 {
 	transition: all 0.2s linear; /* usar linear quando quiser setar ease in e out */
 }
 
+	/* adicionando transition nos elementos garantindo que eles já tenham a propriedade antes da classe sticky ser aplicada */
+	/* cabecalho, logo, logo img, menu */
+
 #logo img {
 	/* setando o tamanho da imagem do logo */
 	padding: 0;
 	margin: 0;
 	max-height: 40px;
 	min-width: 36px; 
-	/* adicionando transition nos elementos garantindo que eles já tenham a propriedade antes da classe sticky ser aplicada */
 	transition: all 0.2s linear; /* usar linear quando quiser setar ease in e out */
 }
 
