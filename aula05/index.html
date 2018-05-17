@@ -159,15 +159,30 @@
 					'email' : "Informe um email válido",
 					'mensagem' :  "Informe uma mensagem válida"
 				};
+
+
+				// adicionando regex que valida email
+				var er_email = RegExp(/^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-\.]{2,}\.[A-Za-z0-9]{2,}(\.[A-Za-z0-9])?/);
+
 				// array vazio
 				var required = [];
 
 				// fields.lenght verifica quantas tags existe dentro do form
 				for(var i = 0; i < fields.length; i++) {
-					if(fields[i].type != "submit" && fields[i].value == "") {
+					if(fields[i].type != "submit" &&fields[i].type != "email" 
+						&& fields[i].value == "") {
 						// campo vazio e deve ser preenchido
 						// enviando a lista com valores para dentro do array
 						required.push(fields[i]);
+
+						// validação de email
+
+					} else if (fields[i].type == "email" && 
+						(fields[i].value == "" || er_email.test(fields[i].value) === false)) 
+					{
+						// enviando valores para required
+						required.push(fields[i]);
+
 					} else if (fields[i].type != "submit" && fields[i].value != ""){
 						// o campo foi preenchido.
 						//devemos limpar a orientação, removendo a classe required caso exista
