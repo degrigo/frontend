@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<!-- DOM é a arvore de objetos do HTML, respeitando a hierarquia (documento == node, html == node)-->
 	</head>
 	<body>
@@ -17,9 +18,9 @@
 				<div id="menu">
 					<img class="icon" id="menu_icon" src="images/icon_menu.png" alt="" />
 					<ul id="menu_lista">
-						<li><a href="#">Sobre</a></li>
-						<li><a href="#">Serviços</a></li>
-						<li><a href="#">Contato</a></li>
+						<li><a href="#sobre">Sobre</a></li>
+						<li><a href="#servicos">Serviços</a></li>
+						<li><a href="#contato">Contato</a></li>
 					</ul>					
 				</div>
 			</div>
@@ -113,13 +114,42 @@
 
 			// setando variável que irá verificar se o click está vindo do menu hamburguer
 			var menu_lista_ativo = false;
-
+			// pegando posição do height
+			//console.log($("#cabecalho").height);
 
 			// setando classe na rolagem da página
 			// setando o evento onscroll (usuário) como função, declarando stickybar
 			window.onscroll = function(){
 				stickyBar();
 			};
+
+			//seletor jQuery
+			//acessando todos os links de menu_lista
+			$("#menu_lista a").on("click", function(event){
+				// pegando o valor da hash console.log(this.hash);
+
+				if(this.hash != "") {
+					//anular o comportamento padrão do navegador
+
+					event.preventDefault();
+
+					// efeito de animação com jQuery
+					var hash = this.hash;
+					var cabecalho_h = $("#cabecalho").height();
+					var posicao = $(hash).offset().top - cabecalho_h;
+					//setando animação
+					$("html, body").animate({
+						// tipo de animação scrollTop
+						//posição da div, pegando offset no eixo Y
+						// 500 é o tempo
+						scrollTop: posicao
+						//usando calback para update da url com a hash do elemento
+					}, 500, function(){
+						window.location.hash = hash;
+					});
+
+				}
+			});
 
 			// window.pageYOffset informa quantos pixels a janela foir rolada no eixo Y
 			function stickyBar() {
@@ -179,7 +209,7 @@
 				// se o menu lista estiver visível
 				// se o clik for fora da área do menu_lista
 				// se o click for fora da area do menu_icon
-				if(menu_lista_ativo === true && menu_icon.currentDisplay == "inline" && menu_lista.currentDisplay == "block" && !menu_lista.contains(event.target) && !menu_icon.contains(event.target)) {
+				if(menu_lista_ativo === true && menu_icon.currentDisplay == "inline-block" && menu_lista.currentDisplay == "block" && !menu_lista.contains(event.target) && !menu_icon.contains(event.target)) {
 					//removendo classe do menu_lista
 					console.log('ok');
 					menu_lista.classList.remove("showup");
