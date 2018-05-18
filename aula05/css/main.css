@@ -155,7 +155,7 @@ h3 {
 	position: relative;
 }
 
-#menu ul { 
+#menu_lista { 
 	display: none; 
 	/* absoluto após o elemento relative acabar*/
 	position: absolute;
@@ -173,6 +173,7 @@ h3 {
 
 #menu_lista.showup li {
 	padding: 16px 56px;
+	display: block;
 }
 
 #menu .icon	{
@@ -184,11 +185,12 @@ h3 {
 
 @media only screen and (min-width: 768px) {
 
-	#menu_list.showup li {
+	#menu_lista.showup li {
 		padding: 0;
+		display: inline-block;
 	}
 
-	#menu_list.showup {
+	#menu_lista.showup {
 		background-color: transparent;
 		right: 0;
 		margin-bottom: 0;
@@ -200,19 +202,21 @@ h3 {
 		display: none;
 	}
 
-	#menu ul {
+	#menu_lista {
 		/* retira marcação da lista ordenada */
 		display: inline-block;
 		list-style: none;
 		position: static;
-	}	
+	}
 
-	#menu ul li {
+
+
+	#menu_lista li {
 		/* conserva o padding no click (inline-block )*/
 		display: inline-block;
 	}
 
-	#menu ul li a {
+	#menu_lista li a {
 		text-decoration: none; /* remove underline */
 		color: #000;
 		text-transform: uppercase;
@@ -220,14 +224,11 @@ h3 {
 	}
 
 	/* seletores dinâmicos hover, */
-	#menu ul li a:hover {
+	#menu_lista li a:hover {
 		color: orange;
 		text-decoration: underline;
 	}
-
 }
-
-
 
 #servicos .servico {
 	/* setando o tamanho relativo dos 3 blocos de serviço */

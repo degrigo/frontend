@@ -209,7 +209,14 @@
 				// se o menu lista estiver visível
 				// se o clik for fora da área do menu_lista
 				// se o click for fora da area do menu_icon
-				if(menu_lista_ativo === true && menu_icon.currentDisplay == "inline-block" && menu_lista.currentDisplay == "block" && !menu_lista.contains(event.target) && !menu_icon.contains(event.target)) {
+
+				console.log(menu_lista_ativo);
+				console.log(menu_icon.currentDisplay);
+				console.log(menu_lista.currentDisplay);
+				console.log(!menu_lista.contains(event.target));
+				console.log(!menu_icon.contains(event.target));
+
+				if(menu_lista_ativo === true && menu_icon.currentDisplay == "inline-block" && menu_lista.currentDisplay == "inline-block" && !menu_lista.contains(event.target) && !menu_icon.contains(event.target)) {
 					//removendo classe do menu_lista
 					console.log('ok');
 					menu_lista.classList.remove("showup");
