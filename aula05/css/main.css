@@ -184,6 +184,10 @@ h3 {
 
 @media only screen and (min-width: 768px) {
 
+	#menu_list.showup li {
+		padding: 0;
+	}
+
 	#menu_list.showup {
 		background-color: transparent;
 		right: 0;

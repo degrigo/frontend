@@ -111,6 +111,10 @@
 
 			var posYCabecalho = cabecalho.offsetTop;
 
+			// setando variável que irá verificar se o click está vindo do menu hamburguer
+			var menu_lista_ativo = false;
+
+
 			// setando classe na rolagem da página
 			// setando o evento onscroll (usuário) como função, declarando stickybar
 			window.onscroll = function(){
@@ -143,8 +147,43 @@
 					//removendo a classe showup
 					menu_lista.classList.remove("showup");
 				} else {
+					// arrumando conflitos de clicks
+					menu_lista_ativo = true;
 					// se a classe foi removida, adiciono ela novamente
 					menu_lista.classList.add("showup");
+				}
+			});
+
+			// observar elemento através do event listener no evento click
+			window.addEventListener('click', function(event){
+				//verificar se o ícone de menu está visível
+				//verifica se a lista de menu está aberta
+
+				//pegando os valores dos elementos menu_icon e menu_lista
+				var menu_icon = document.getElementById("menu_icon");
+				var menu_lista = document.getElementById("menu_lista");
+				// pegando todos os estilos comṕutados pelo browser
+				// segundo parâmetro pegaria valores de before e after
+				//console.log(window.getComputedStyle(menu_icon, null)) imprime o resultado para verificar a lista de propriedades já computadas pelo browser
+				// getValuePropertyValue pega os valores da propriedade setada
+				menu_icon.currentDisplay = window.getComputedStyle(menu_icon, null).getPropertyValue("display");
+				menu_lista.currentDisplay = window.getComputedStyle(menu_icon, null).getPropertyValue("display");
+
+				//console.log(menu_lista.currentDisplay = window.getComputedStyle(menu_icon, null).getPropertyValue("display"));
+
+				// mostra o alvo do click
+				//console.log(event.target);
+
+
+				// se o ícone de menu estiver visível
+				// se o menu lista estiver visível
+				// se o clik for fora da área do menu_lista
+				// se o click for fora da area do menu_icon
+				if(menu_lista_ativo === true && menu_icon.currentDisplay == "inline" && menu_lista.currentDisplay == "block" && !menu_lista.contains(event.target) && !menu_icon.contains(event.target)) {
+					//removendo classe do menu_lista
+					console.log('ok');
+					menu_lista.classList.remove("showup");
+					menu_lista_ativo = false;
 				}
 			});
 
@@ -169,7 +208,8 @@
 
 				// fields.lenght verifica quantas tags existe dentro do form
 				for(var i = 0; i < fields.length; i++) {
-					if(fields[i].type != "submit" &&fields[i].type != "email" 
+					//adicionando email na validação
+					if(fields[i].type != "submit" && fields[i].type != "email" 
 						&& fields[i].value == "") {
 						// campo vazio e deve ser preenchido
 						// enviando a lista com valores para dentro do array
@@ -178,8 +218,7 @@
 						// validação de email
 
 					} else if (fields[i].type == "email" && 
-						(fields[i].value == "" || er_email.test(fields[i].value) === false)) 
-					{
+						(fields[i].value == "" || er_email.test(fields[i].value) === false)) {
 						// enviando valores para required
 						required.push(fields[i]);
 
@@ -191,12 +230,13 @@
 						// removendo classe required e adicionando valid
 						fields[i].classList.remove("required");
 						fields[i].classList.add("valid");
+						// limpando orientação
 						var span = fields[i].parentNode.getElementsByTagName("span")[0];
 						span.innerHTML = "";
 					}
 				}
 
-				console.log(required);
+				//console.log(required);
 				//return false;
 
 				// algum item foi jogado dentro do array
